@@ -15,9 +15,9 @@ public class MainTest {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             driver.navigate().to("https://demoqa.com/");
             driver.manage().window().maximize();
-            new HomePage().elementTab.click();
-            new ElementsPanel().selectTab(driver, TabNames.ELEMENT, SubTabNames.TEXT_BOX);
-            TextBoxPage textBoxPage = new TextBoxPage();
+            new HomePage(driver).elementTab.click();
+            new ElementsPanel(driver).selectTab(driver, TabNames.ELEMENT, SubTabNames.TEXT_BOX);
+            TextBoxPage textBoxPage = new TextBoxPage(driver);
             textBoxPage.fullName.sendKeys("Anandhan");
             textBoxPage.email.sendKeys("anandhan@mail.com");
             textBoxPage.currentAddress.sendKeys("pudukkottai");
