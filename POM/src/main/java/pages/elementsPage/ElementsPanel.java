@@ -10,7 +10,7 @@ import java.util.List;
 
 public class ElementsPanel {
 
-    public void HomePage(WebDriver driver){
+    public ElementsPanel(WebDriver driver){
         new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='header-text' and text()='Elements']")));
     }
 

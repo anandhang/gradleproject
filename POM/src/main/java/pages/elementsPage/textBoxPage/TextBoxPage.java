@@ -23,7 +23,10 @@ public class TextBoxPage {
     @FindBy(id = "permanentAddress")
     public WebElement permanentAddress;
 
-    public void TextBoxPage(WebDriver driver){
+    @FindBy(id = "submit")
+    public WebElement submitBtn;
+
+    public TextBoxPage(WebDriver driver){
         new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(By.id("userName")));
         PageFactory.initElements(driver,this);
     }

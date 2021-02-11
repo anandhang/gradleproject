@@ -3,10 +3,8 @@
 
 <suite name="FULLRegression" verbose="1" >
     <test name="All_Tests" >
-        <groups>
-            <run>
-                <include name="WaitTests"/>
-            </run>
-        </groups>
+        <packages>
+            <package name="test_scripts.suite.*"></package>
+        </packages>
     </test>
 </suite>
