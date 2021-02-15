@@ -1,0 +1,6 @@
+# Project exclude paths
+/.gradle/
+/POM/build/
+/POM/build/classes/java/main/
+/TEST/build/
+/TEST/build/classes/java/test/

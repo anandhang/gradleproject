@@ -1,10 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="FULLRegression" verbose="1" >
-    <test name="All_Tests" >
+    <test name="DataProvaiderTestcases">
+        <classes>
+            <class name="test_scripts.datadriven.using_dataprovaider.TestDataFromExcel"></class>
+        </classes>
+    </test>
+
+    <!--
+     <test name="All_Tests" >
         <packages>
             <package name="test_scripts.suite.*"></package>
         </packages>
     </test>
+    <test name="testOne">
+        <parameter name="Username" value="Anandhan"></parameter>
+        <parameter name="Password" value="Sandhana09"></parameter>
+        <classes>
+            <class name="test_scripts.datadriven.using_parametes.TestCase1"></class>
+        </classes>
+    </test>
+    <test name="testTwo">
+        <parameter name="Username" value="SubhaShree"></parameter>
+        <parameter name="Password" value="03211987"></parameter>
+        <classes>
+            <class name="test_scripts.datadriven.using_parametes.TestCase2"></class>
+        </classes>
+    </test>
+    <test name="testThree">
+        <parameter name="Username" value="Riyana"></parameter>
+        <parameter name="Password" value="09122020"></parameter>
+        <classes>
+            <class name="test_scripts.datadriven.using_parametes.TestCase3"></class>
+        </classes>
+    </test>
+    -->
+
 </suite>

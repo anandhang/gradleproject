@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 public class MainTest {
     public static void main(String[] arg) {
+            /*
             System.setProperty("webdriver.chrome.driver","C:\\Users\\Public\\Tools\\chromedriver.exe");
             WebDriver driver = new ChromeDriver();
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -22,5 +23,8 @@ public class MainTest {
             textBoxPage.email.sendKeys("anandhan@mail.com");
             textBoxPage.currentAddress.sendKeys("pudukkottai");
             textBoxPage.permanentAddress.sendKeys("Kulamangalam");
+
+             */
+            System.out.println(System.getProperty("user.dir"));
     }
 }

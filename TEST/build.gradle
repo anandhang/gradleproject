@@ -1,8 +1,14 @@
 sourceSets{
     test{
         java.srcDirs = ['src/test/java']
+    }
+}
+/*
+sourceSets{
+    test{
+        java.srcDirs = ['src/test/java']
         resources {
-            srcDirs = ['drivers/chromedriver']
+            srcDirs = ['src/drivers/chromedriver']
             output.resourcesDir = file("$buildDir")
         }
     }
@@ -10,13 +16,11 @@ sourceSets{
 
 def getChromeVersion(){
     def version = new ByteArrayOutputStream()
-/*
     exec {
         workingDir = "$projectDir"
         commandLine 'cmd', ' /c "call ls "C:\\Program Files (x86)\\Google\\Chrome\\Application" | grep -E "^[0-9]+." | tail -1 | cut -c1-2"'
         standardOutput = version
     }
- */
     println "Chrome Version:" + version.toString().trim()
     return version.toString().trim()
 }
@@ -32,9 +36,9 @@ def getChromeDriverVersion(){
     if(file.canRead()){
         version = file.readLines()[1].toString().trim()
         println "Chrome Driver Version:" + version
-        return version
+        return version.toString().trim()
     }
-    return 0
+    return ""
 }
 
 def downloadNewVersionOfChromeDriver(chromeVersion){
@@ -48,22 +52,18 @@ def downloadNewVersionOfChromeDriver(chromeVersion){
 def killWinChromeDriver() {
     if (System.getProperty('os.name').toLowerCase(Locale.ROOT).contains('windows')) {
         def count = new ByteArrayOutputStream()
-        /*
         exec {
             workingDir = "$projectDir"
             commandLine 'cmd', ' /c "call tasklist | grep chromedriver | wc -1"'
             standardOutput = count
         }
 
-         */
         if (count.toString().trim() != "0"){
-        /*
             exec {
-                //workingDir = "$projectDir"
-                //commandLine 'cmd', ' /c "call taskkill /IM chromedriver.exe /F & echo 1"'
+                workingDir = "$projectDir"
+                commandLine 'cmd', ' /c "call taskkill /IM chromedriver.exe /F & echo 1"'
                 println "ChromeDriver Killed"
             }
-         */
         }
     }
 }
@@ -78,7 +78,7 @@ task installChromeDriver {
     if (System.getProperty('os.name').toLowerCase(Locale.ROOT).contains('windows')){
         def chromeVersion = getChromeVersion()
         def chromeDriverVersion = getChromeDriverVersion()
-        if(!chromeVersion.equals(chromeDriverVersion)){
+        if(!(chromeVersion == chromeDriverVersion)){
             println "install ChromeDriver"
             downloadNewVersionOfChromeDriver(chromeVersion)
             updateChromeDriverPropertyFile(chromeVersion)
@@ -94,3 +94,5 @@ test {
     }
 }
 
+
+ */
