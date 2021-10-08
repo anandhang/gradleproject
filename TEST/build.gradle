@@ -1,9 +1,14 @@
+
+
 sourceSets{
     test{
         java.srcDirs = ['src/test/java']
     }
 }
+
+
 /*
+
 sourceSets{
     test{
         java.srcDirs = ['src/test/java']
@@ -18,7 +23,7 @@ def getChromeVersion(){
     def version = new ByteArrayOutputStream()
     exec {
         workingDir = "$projectDir"
-        commandLine 'cmd', ' /c "call ls "C:\\Program Files (x86)\\Google\\Chrome\\Application" | grep -E "^[0-9]+." | tail -1 | cut -c1-2"'
+        commandLine 'cmd', ' /c "call ls "C:\\Program Files\\Google\\Chrome\\Application" | grep -E "^[0-9]+." | tail -1 | cut -c1-2"'
         standardOutput = version
     }
     println "Chrome Version:" + version.toString().trim()
@@ -54,7 +59,7 @@ def killWinChromeDriver() {
         def count = new ByteArrayOutputStream()
         exec {
             workingDir = "$projectDir"
-            commandLine 'cmd', ' /c "call tasklist | grep chromedriver | wc -1"'
+            commandLine 'cmd', ' /c "call tasklist | find /I /C "chromedriver.exe"'
             standardOutput = count
         }
 
@@ -93,6 +98,4 @@ test {
         suites "src/test/java/test_scripts/testngSuite.xml"
     }
 }
-
-
  */

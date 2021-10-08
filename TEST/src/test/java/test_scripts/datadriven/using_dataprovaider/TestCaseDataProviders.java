@@ -3,7 +3,7 @@ package test_scripts.datadriven.using_dataprovaider;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class TestCaseDataProvaider {
+public class TestCaseDataProviders {
 
     String[][] data={
         {"Anandhan","Sandhanam"},
@@ -11,12 +11,12 @@ public class TestCaseDataProvaider {
         {"Riyana","09122020"}
     };
 
-    @DataProvider(name="DataProvaiderTestcases")
-    public String[][] TestCaseDataProvaider(){
+    @DataProvider(name="TestCaseDataProviders")
+    public String[][] TestCaseDataProviders(){
         return data;
     }
 
-    @Test(dataProvider="DataProvaiderTestcases")
+    @Test(dataProvider="TestCaseDataProviders")
     public void TestCaseOne(String Username, String Password){
         System.out.println("FirstTest:"+Username);
         System.out.println("FirstTest:"+Password);

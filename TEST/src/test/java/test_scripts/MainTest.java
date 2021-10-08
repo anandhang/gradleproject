@@ -23,8 +23,10 @@ public class MainTest {
             textBoxPage.email.sendKeys("anandhan@mail.com");
             textBoxPage.currentAddress.sendKeys("pudukkottai");
             textBoxPage.permanentAddress.sendKeys("Kulamangalam");
-
-             */
             System.out.println(System.getProperty("user.dir"));
+             */
+        System.setProperty("webdriver.chrome.driver","C:\\Users\\Public\\Tools\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        System.out.println(System.getProperty("user.dir")+"\\TEST\\src\\screenshots\\");
     }
 }
